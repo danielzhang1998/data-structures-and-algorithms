@@ -54,14 +54,35 @@ class dequeueCyclicBlock{
     return count > 0;
   }
 
+
+
+// -- Printing and main -----------------------
+
+  public void printBlock(){
+    System.out.print("[");
+    for (Object element : this.items){
+      System.out.print(element + ", ");
+    }
+    System.out.print("] \n");
+  }
+
+
   public static void main(String args[]){
-    dequeueCyclicBlock qB = new dequeueCyclicBlock(3);
-    System.out.println(qB.dequeue());
-    System.out.println(qB.enqueue("dog"));
-    System.out.println(qB.enqueue("cat"));
-    System.out.println(qB.enqueue("fish"));
-    System.out.println(qB.enqueue("full element 1"));
-    System.out.println(qB.enqueue("full element 2"));
+    System.out.println("\n\nSTACK:");
+    stackBlock qB = new stackBlock(3);
+    System.out.println(qB.delete());
+    System.out.println(qB.insert("dog"));
+    qB.printBlock();
+    System.out.println(qB.insert("cat"));
+    qB.printBlock();
+    System.out.println(qB.insert("fish"));
+    qB.printBlock();
+    System.out.println(qB.insert("full element 1"));
+    System.out.println(qB.insert("full element 2"));
+    System.out.println(qB.delete());
+    System.out.println(qB.insert("brand new fish"));
+    qB.printBlock();
+    System.out.println(qB.insert("full element 3"));
   }
 
 }
