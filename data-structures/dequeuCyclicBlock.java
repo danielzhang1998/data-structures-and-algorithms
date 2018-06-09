@@ -3,7 +3,7 @@ import java.util.*;
 /*  This is the block (array based) implementation
     of a Cyclic Dequeue (doubly ended queue) data structure.
     This is my solution as practice for CITS200
-    Data Structures & Alhrotithms at UWA.
+    Data Structures & Algorithms at UWA.
 
     To compile from windows command prompt:
       cd C:\Users\Jordi\Desktop\CODE GANG\CITS2200\exam-code\data-structures  (use your own)

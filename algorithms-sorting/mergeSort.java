@@ -2,7 +2,7 @@ import java.util.*;
 
 /*  This is the merge sort, sorting algorithm
     This is my solution as practice for CITS200
-    Data Structures & Alhrotithms at UWA.
+    Data Structures & Algorithms at UWA.
     Based off code from www.geeksforgeeks.org
 
     To compile from windows command prompt:

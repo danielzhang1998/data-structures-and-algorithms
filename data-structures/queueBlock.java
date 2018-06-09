@@ -3,7 +3,7 @@ import java.util.*;
 /*  This is the block (array based) implementation
     of a queue data structure.
     This is my solution as practice for CITS200
-    Data Structures & Alhrotithms at UWA.
+    Data Structures & Algorithms at UWA.
 
     To compile from windows command prompt:
       cd C:\Users\Jordi\Desktop\CODE GANG\CITS2200\exam-code\data-structures  (use your own)
@@ -27,7 +27,6 @@ class queueBlock{
   public Object enqueue(Object o){
     if (count != s) {
       count++;
-      // System.out.println(count);
 
       Object previous = items[0];
       items[0] = o;
@@ -44,7 +43,6 @@ class queueBlock{
   public Object dequeue(){
     if (!isEmpty()){
       count--;
-      // System.out.println(count);
       Object removedObject = items[count];
       items[count] = null;
       return "Removed object: " + removedObject;
@@ -56,14 +54,17 @@ class queueBlock{
     return count == 0;
   }
 
-public void printBlock(){
-  for (Object element : this.items){
-    System.out.print(element + ", ");
+  public void printBlock(){
+    System.out.print("[");
+    for (Object element : this.items){
+      System.out.print(element + ", ");
+    }
+    System.out.print("] \n");
   }
-  System.out.println();
-}
 
   public static void main(String args[]){
+
+    System.out.println("\n\nQUEUE;");
     queueBlock qB = new queueBlock(3);
     System.out.println(qB.dequeue());
     System.out.println(qB.enqueue("dog"));

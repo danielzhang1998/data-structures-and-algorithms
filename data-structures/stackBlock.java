@@ -3,7 +3,7 @@ import java.util.*;
 /*  This is the block (array based) implementation
     of a stack data structure.
     This is my solution as practice for CITS200
-    Data Structures & Alhrotithms at UWA.
+    Data Structures & Algorithms at UWA.
 
     To compile from windows command prompt:
       cd C:\Users\Jordi\Desktop\CODE GANG\CITS2200\exam-code\data-structures  (use your own)
@@ -14,8 +14,8 @@ import java.util.*;
 
 class stackBlock{
   public Object[] items; // holds general objects
-  private int s; // size of queue
-  private int count; // number of characters currently in the queue
+  private int s; // size of stack
+  private int count; // number of characters currently in the stack
 
 
   public stackBlock(int s) {
@@ -24,47 +24,55 @@ class stackBlock{
     items = new Object[s];
   }
 
-  public Object enqueue(Object o){
+  public Object insert(Object o){
     if (count != s) {
-      items[count - 1] = o;
+      items[count] = o;
       count++;
-      return o;
+      return "Added: " + o;
     }
-    else{return "Sorry Queue Full: " + null;}
+    else{return "Stack full, coudn't add: " + o;}
   }
 
-  public Object dequeue(){
+  public Object delete(){
     if (!isEmpty()){
-      Object removedObject = items[count - 1];
-      items[count - 1] = null;
+      count--;
+      Object removedObject = items[count];
+      items[count] = null;
       return "Removed object: " + removedObject;
     }
-    else{return "Sorry Queue Empty: " + null;}
+    else{return "Stack Empty, cannot delete ";}
   }
 
   boolean isEmpty(){
     return count == 0;
   }
 
-  public static void main(String args[]){
-    stackBlock qB = new stackBlock(3);
-    System.out.println(qB.dequeue());
-    System.out.print(Arrays.toString(qB));
 
-    System.out.println(qB.enqueue("dog"));
-    System.out.print(Arrays.toString(qB));
-
-    System.out.println(qB.enqueue("cat"));
-    System.out.print(Arrays.toString(qB));
-
-    System.out.println(qB.enqueue("fish"));
-    System.out.print(Arrays.toString(qB));
-
-    System.out.println(qB.enqueue("full element 1"));
-    System.out.println(qB.enqueue("full element 2"));
-    System.out.println(qB.dequeue());
-    System.out.println(qB.enqueue("brand new fish"));
-
+  public void printBlock(){
+    System.out.print("[");
+    for (Object element : this.items){
+      System.out.print(element + ", ");
+    }
+    System.out.print("] \n");
   }
 
+  public static void main(String args[]){
+
+    System.out.println("\n\nSTACK:");
+    stackBlock qB = new stackBlock(3);
+    System.out.println(qB.delete());
+    System.out.println(qB.insert("dog"));
+    qB.printBlock();
+    System.out.println(qB.insert("cat"));
+    qB.printBlock();
+    System.out.println(qB.insert("fish"));
+    qB.printBlock();
+    System.out.println(qB.insert("full element 1"));
+    System.out.println(qB.insert("full element 2"));
+    System.out.println(qB.delete());
+    System.out.println(qB.insert("brand new fish"));
+    qB.printBlock();
+    System.out.println(qB.insert("full element 3"));
+
+  }
 }
