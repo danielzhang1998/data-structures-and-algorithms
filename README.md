@@ -12,3 +12,6 @@ These java files are solutions to the various data structures and algorithms as 
 - stackBlock.java ✅
 - queueBlock.java ✅
 - dequeueCyclicBlock.java
+
+### Tree Traversals
+- nonRecursiveDfs.java

@@ -8,8 +8,8 @@ import java.util.*;
     To compile from windows command prompt:
       cd C:\Users\Jordi\Desktop\CODE GANG\CITS2200\exam-code>   (use your own)
       set path=C:\Program Files\Java\jdk1.8.0_161\bin
-      javac MergeSort.java
-      java MergeSort
+      javac mergeSort.java
+      java mergeSort
 */
 
 class mergeSort {
